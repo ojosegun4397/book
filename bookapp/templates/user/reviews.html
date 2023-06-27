@@ -1,0 +1,71 @@
+{% extends "user/layout.html" %}
+{% block content %}
+
+   <div class="content py-3">
+    <div class="row g-5"> 
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+      <img src="/static/collections/{{bookdeets.book_cover}}" class="img-fluid"  style="max-height:500px">
+      </div>
+    </div> 
+
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      {{bookdeets.book_title}}
+      </h3>
+
+      <p style="font-size: Courier New;">{{bookdeets.book_desc}}</p>
+
+      <article class="blog-post">
+        <h5 class="blog-post-title">A Book Worth More than the Prices</h5>
+        <p class="blog-post-meta">Reviwed on January 1, 2021 by <a href="#">Mark</a></p>
+
+        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+        <hr> 
+      </article>
+ 
+           <article class="blog-post">
+        <h5 class="blog-post-title">I love it!</h5>
+        <p class="blog-post-meta">Reviewed on January 1, 2021 by <a href="#">Santa</a></p>
+
+        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+        <hr> 
+      </article>
+     {% if session.get('userid') and session.get('user_loggedin')%}
+      <article>
+      <form action="/submitreview" method="POST">
+        
+        <div class="mb-3 row">
+          <label class="col-md-3">Title</label>
+          <div class="col-md-9">
+            <input type="text" name="review_title" class="form-control border-info">
+          </div>
+        </div>
+         <div class="mb-3 row">
+          <label class="col-md-3">Review</label>
+          <div class="col-md-9">
+            <input type="hidden" value="bookid" name="{{bookdeets.book_id}}">
+            <input type="hidden" value="{{csrf_token()}}" name="csrf_token">
+             <textarea name="review" class="form-control border-info"></textarea>
+          </div>
+        </div>
+         <div class="mb-3 row">
+           <button class="btn btn-primary btn-lg">Submit Review</button>
+         </div>
+      </form>  
+      </article>
+      {%endif%}
+
+    </div>
+
+   
+
+  </div>
+
+
+
+   </div>
+  {%endblock content%}
+
+  {% block morecontent %}{% endblock morecontent%} 
+{% block featured %}{%endblock%}

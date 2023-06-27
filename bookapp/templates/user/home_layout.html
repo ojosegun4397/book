@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Bookworm - Welcome!</title>
+
+<link href="static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="static/heroes.css" rel="stylesheet">
+  </head>
+  <body>
+   
+
+
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="static/images/logo_white.png" height="30" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#partner">Explore</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link text-white" href="#featured">Bookstores</a>
+            </li>
+          
+          </ul>
+          <form class="d-flex" role="search">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+             
+              <li class="nav-item">
+                <a class="btn btn-warning noround" href="#">Donate</a>
+              </li>
+              
+            </ul>
+          </form>
+        </div>
+      </div>
+    </nav>
+       
+<main>
+
+<div class="container col-xxl-8 px-4 py-5" >
+
+<header class="p-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+       
+        <ul class="member nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-start mb-md-0">
+          <li><a href="dashboard.html" class="nav-link px-2 " style="color:#FF5714">Dashboard</a></li>
+          <li><a href="reviews.html" class="nav-link px-2 link-dark">My Reviews</a></li>
+          <li><a href="donations.html" class="nav-link px-2 link-dark">My Donations</a></li>
+        
+        </ul>
+
+         
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="static/images/mdo.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</header>
+ 
+    <div class="row flex-lg-row-reverse align-items-center g-5" >
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="static/images/banner.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"  loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Read and Share</h1>
+        <p class="lead">Bookworm is an online book review app to improve the culture of reading among people around the world. </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-secondary px-4 me-md-2">Register Me</button>
+          <a href="login.html" class="btn btn-outline-primary px-4">Login</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+ 
+<!--The home page can populate this for other contents like partner hotel-->
+<div class="layout" id="partner">
+  
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Book Review</h2>
+
+    <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
+      <div class="col">
+       <img src="static/images/b1.jpg" class="img-fluid bk" alt="">    
+       <div class="deets"><h6>The Day is Bright </h6>
+        <p><i>Author Dickson</i></p>
+        <p><a href="">23 Reviews</a></p>          
+       </div>  
+       </div>
+
+      <div class="col">
+        <img src="static/images/b2.jpg" class="img-fluid bk" alt="">  
+         <div class="deets"><h6>The Day is Bright </h6>
+        <p><i>Author Dickson</i></p>
+        <p><a href="">23 Reviews</a></p>    
+      
+       </div>         
+       </div>
+       <div class="col">
+        <img src="static/images/b3.jpg" class="img-fluid bk" alt="">  
+         <div class="deets"><h6>The Day is Bright </h6>
+        <p><i>Author Dickson</i></p>
+        <p><a href="">23 Reviews</a></p>    
+      
+       </div>         
+       </div>
+       <div class="col">
+        <img src="static/images/b7.jpg" class="card-img-top bk" alt=""> 
+         <div class="deets"><h6>The Day is Bright </h6>
+        <p><i>Author Dickson</i></p>
+        <p><a href="">23 Reviews</a></p>    
+      
+       </div>          
+       </div>
+          
+    </div>
+  </div> 
+ </div>
+
+<!-- end more content-->
+
+<div class="layout" id="featured">
+  
+  <div class="container px-4" id="custom-cardx">
+    <h2 class="pb-2 border-bottom">Partner Bookstores</h2>
+
+    <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
+      <div class="col">
+       <img src="static/images/store1.jpg" class="img-fluid jiji" alt="">    
+       <div class="deets">
+        <h6>Sample Bookstore</h6>
+       </div>  
+       </div>
+
+    <div class="col">
+       <img src="static/images/h3.jpg" class="img-fluid jiji" alt="">    
+       <div class="deets">
+        <h6>Sample Store</h6>
+       </div>  
+       </div>
+      <div class="col">
+       <img src="static/images/h1.jpg" class="img-fluid jiji" alt="">    
+       <div class="deets">
+        <h6>Another Store</h6>
+       </div>  
+       </div>
+     <div class="col">
+       <img src="static/images/h2.jpg" class="img-fluid jiji" alt="">    
+       <div class="deets">
+        <h6>More Store</h6>
+       </div>  
+       </div>
+          
+    </div>
+  </div> 
+ </div>
+  
+<!-- FOOTER -->
+<footer class="container" style="height:100px; line-height:100px;">
+  <p class="float-end"><a href="#" style="color:#FF5714">Back to top</a></p>
+  <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+</main>
+
+ <script src="static/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

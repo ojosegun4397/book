@@ -1,0 +1,92 @@
+{% extends "user/layout.html"%}
+{%block content%}{%endblock%}
+{%block morecontent%}
+    <div class="layout" id="partner">
+    <div class="container" id="custom-cards">
+
+<div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-3">
+    <select id="category" class="form-select border-primary">
+        <option value="">please select</option>
+        {%for c in cats%}
+        <option value="{{c.cat_id}}">{{c.cat_name}}</option>
+        {%endfor%}
+    </select>
+    </div>
+   <div class="col-3">
+       <input type="text" id="title"  class="form-control form-control-lg border-primary", placeholder="search">
+   </div>
+
+   <div class="col-3">
+    <button class="btn btn-primary noround" id="btnsearch">search</button>
+</div>
+</div>
+</div>
+</div>
+
+        <h2 class="border-bottom"> Explore Available Books</h2>
+              <div class="row my-5">
+            {% for b in books %}
+                <div class="col">
+                    <img src="{{url_for('static', filename='collections/'+b.book_cover)}}" class="img-fluid bk" alt=""> 
+                    <div  class="deets">
+                        <h6><a href="/review/{{b.book_id}}">{{b.book_title}} </a></h6>
+                        <p>{{b.catdeets.cat_name}}</p>
+                        <p><button class="btn btn-sm btn-warning">{{b.bookreviews|count}} Reviews</button></p>
+                        
+                    </div>       
+                </div>
+            {%endfor%}
+            
+            </div>
+
+        </div>
+
+
+        
+
+
+
+    
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+{%endblock%}
+{%block featured%}{%endblock%}
+{% block customjs %}
+<script type=text/javascript>
+   $(document).ready(function(){
+    $("#btnsearch").click(function(){
+      //retrieve the data
+      var cat = $('#category').val()
+      var title =$('#title').val()
+      //make ajax call
+      data2send = {"category":cat,"title":title}
+      $.ajax({
+        url:"/search/book",
+        data:data2send,
+        type:'get',
+        beforeSend:function(){
+          $("#btnsearch").html("<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true></span><span>Loading...</span>")
+        },
+        success:function(rsp){ 
+          $('#searchcontainer').html(rsp)
+         },
+        error:function(err){ console.log(err)}
+      })
+    })    
+  })
+
+</script>
+
+{% endblock %}
+     

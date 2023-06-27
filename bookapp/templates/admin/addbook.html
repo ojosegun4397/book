@@ -1,0 +1,62 @@
+{% extends "admin/admin_layout.html"%}
+{% block breadcrumbs %}
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard </a></li>
+                              <li class="breadcrumb-item active">Add Book</li>
+                        </ol>
+{% endblock breadcrumbs %}
+{% block admincontent %}
+                      <div class="row">
+                          <div class="col">
+                              
+     <form ation="" method="POST" enctype="multipart/form-data">
+      <input type="hidden" value="{{csrf_token()}}" name="csrf_token">
+      <div class="mb-3">
+
+        <label for="category" class="form-label">Category</label>
+        <select name="bookcat" id="category"  class="form-control">
+                            {%for c in cats%}
+                             <option value="{{c.cat_id}}"> {{c.cat_name}}</option>
+                            {%endfor%}
+        </select>
+       
+         
+          <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input type="text" name="title" class="form-control" id="title">
+             
+          </div>
+          <div class="mb-3">
+            <label for="year" class="form-label">publication year</label>
+            <input type="text" name="year" class="form-control" id="author">
+          </div>
+           
+          <fieldset class="mb-3">
+            <legend>Status</legend>
+            <div class="form-check">
+              <input type="radio" name="status" value="1"  class="form-check-input" id="exampleRadio1">
+              <label class="form-check-label" for="exampleRadio1">Publish</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="radio" name="status" value="0" class="form-check-input" id="exampleRadio2">
+              <label class="form-check-label" for="exampleRadio2">Do Not Publish</label>
+            </div>
+          </fieldset>
+          <div class="mb-3">
+            <label class="form-label" for="customFile">Upload Cover</label>
+            <input type="file" class="form-control" name="cover" id="customFile">
+          </div>
+           <div class="mb-3">
+            <label class="form-label" for="customFile">Description</label>
+         <textarea name="desc" class="form-control"></textarea>
+          </div>
+          
+         
+          <button type="submit" class="btn btn-primary">Add Book!</button>
+        </form>
+
+
+                          </div>
+                      </div>
+{% endblock admincontent %}
+

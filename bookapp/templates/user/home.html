@@ -1,0 +1,67 @@
+{% extends "user/layout.html"%}
+
+{%block content%}
+<!-- <div> {{partner_stores}}</div> -->
+    <div class="layout" id="partner">
+    <div class="container" id="custom-cards">
+        <h2 class="border-bottom"> Book review</h2>
+              <div class="row">
+            {% for b in books %}
+                <div class="col">
+                    <img src="{{url_for('static', filename='collections/'+b.book_cover)}}" class="img-fluid bk" alt=""> 
+                    <div  class="deets">
+                        <h6><a href="/review/{{b.book_id}}">{{b.book_title}} </a></h6>
+                        <p>{{b.catdeets.cat_name}}</p>
+                        <p><button class="btn btn-sm btn-warning">{{b.bookreviews|count}} Reviews</button></p>
+                        
+                    </div>       
+                </div>
+            {%endfor%}
+            
+            </div>
+
+        </div>
+
+
+        
+
+
+
+    
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+{%endblock%}
+{%block featured%}
+<div class="layout" id="featured">
+  
+    <div class="container px-4" id="custom-cardx">
+      <h2 class="pb-2 border-bottom">Partner Bookstores</h2>
+
+      <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
+        {% if partner_stores.get('status')==1%}
+        {%for p in partner_stores['data']%}
+        <div class="col">
+         <img src="{{p['storepic']}}" class="img-fluid jiji" alt="">    
+         <div class="deets">
+          <h6>{{p['storename']}}</h6>
+         </div>  
+         </div>
+    {%endfor%}
+    {%else%}
+    <div class="alert alert-info">{{partner_stores['data']}}</div>
+    {%endif%}
+            
+      </div>
+    </div> 
+   </div>
+
+{%endblock%}

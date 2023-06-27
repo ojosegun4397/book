@@ -1,0 +1,63 @@
+{% extends "admin/admin_layout.html"%}
+                        {% block breadcrumbs %}
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                        {% endblock breadcrumbs %}
+                        {% block admincontent %}
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                DataTables is a third party plugin that is used to generate the demo table below.  
+                                <a href="/admin/newbook" class="btn btn-outline-primary">Add Book</a>
+                            </div>
+                        </div>
+                {% if books%}
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                            </div>
+                            <div class="card-body">
+                               <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Book Title</th>
+      <th scope="col">category</th>
+      <th scope="col">Cover</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in books%}
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>{{b.book_title}}</td>
+      <td>{{b.catdeets.cat_name}}</td>
+      <td><img src="{{url_for('static',filename='collections/'+b.book_cover)}}" height="100"></td>
+     
+      <td><a href="" class="btn btn-sm btn-primary">Edit</a> 
+        <a href="/admin/deletebook/{{b.book_id}}" onclick="return confirm(' do you really want to delete {{b.book_title}} ?')"class="btn btn-sm btn-danger">Delete</a> 
+        {% if b.book_status =="1" %}
+
+        <a href="" class="btn btn-sm btn-success">Published</a>
+        {% else %}
+        <a href="" class="btn btn-sm btn-light">not published</a>
+        {%endif%}
+    </tr>
+   
+  
+       
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+        </div>
+                        </div>
+
+                       
+                {%else %}
+                <div class="alert alert-info"> no book has been added yet</div>
+                {%endif %}
+                        {% endblock admincontent %}

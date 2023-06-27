@@ -1,0 +1,31 @@
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
+}
+.noround{
+	border-radius: 0px;
+}
+nav{
+	background-color: #0C6DFC;
+}
+.bk:hover{
+	box-shadow: 2px 2px 2px grey;
+}
+.deets{
+	padding:0.5em 0px;
+
+}
+a.active{
+	color:black !important;
+}
+.bk{
+	max-height: 275px !important;
+}
+.deets a{
+	color:#FF5714;
+}
+.deets h6{
+	font-weight: bold;
+}
+body{
+	 background-color: #f5f5f5;
+}

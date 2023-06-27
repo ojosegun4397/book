@@ -1,0 +1,39 @@
+{% extends "user/layout.html"%}
+
+{% block header %}{%endblock%}
+
+{% block content %}
+    
+<div class="content" style="background-color: white;padding:3em">
+  <h3>Edit Profile</h3>
+  <form action="" method="POST" enctype="multipart/form-data">
+          
+    
+    <div>
+        {{pform.fullname.label}}
+        {{pform.fullname.error}}
+        {{pform.fullname(class_="form-control", value=userdeets.user_fullname)}}
+       
+        {{pform.csrf_token}}
+    </div>
+
+    <div>
+        {%if userdeets.user_pix ==None%}
+        <p class="small text-warning "> please uplaod a profile picture</p>
+        {%endif%}
+        {{pform.pix.label}}
+        {{pform.pix.error}}
+        {{pform.pix(class_="form-control")}}
+    </div>
+
+    <div>    
+        {{pform.btn(class_="form-control btn btn-primary my-3 col-12")}}
+    </div>
+    
+  </form>
+  
+ </div>
+{%endblock%}
+
+{% block morecontent %}{% endblock morecontent%} 
+{% block featured %}{%endblock%}
